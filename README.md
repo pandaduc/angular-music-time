@@ -5,6 +5,7 @@ This project is an example of using SoundCloud API to build a Music Web Applicat
 * Angular 1.5.X, use .component()
 * Webpack
 * SASS
+* Icons: in favour of using SVG
 
 ## Installing
 * `fork` this repo
