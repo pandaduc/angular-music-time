@@ -1,1 +1,58 @@
-<h1>This is home page</h1>
+<!--<input type="search" ng-model="keywords" ng-change="vm.search()"/>
+<ul>
+    <li ng-repeat="result in results">
+        {{result.title}}
+    </li>
+</ul>-->
+
+<header>
+    <h1>Top 50</h1>
+</header>
+
+<section class="tracks">
+    <figure ng-repeat="item in vm.tracks" class="track">
+        <div class="track__image">
+            <img ng-src="{{item.track.artwork_url | imageSize:'300'}}" alt="{{item.track.title}}" />
+            <div class="overlay">
+                <button ng-click="vm.play(item.track.id)">
+                    <svg class="icon icon-play_circle_outline"><use xlink:href="#icon-play_circle_outline"></use></svg>
+                </button>
+            </div>
+        </div>
+        <figcaption class="track__caption">
+            <a href="">{{item.track.title}}</a>
+            <a href="">{{item.track.user.username}}</a>
+        </figcaption>
+    </figure>
+</section>
+
+<!--<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Playback</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr ng-repeat="track in vm.tracks">
+            <td>
+                {{$index}}
+            </td>
+            <td>
+                {{track.track.title}}
+            </td>
+            <td>
+                {{track.track.created_with.name}}
+            </td>
+            <td>
+                {{track.track.playback_count}}
+            </td>
+            <td>
+                <button ng-click="vm.play(track.track.id)">Play</button>
+            </td>
+        </tr>
+    </tbody>
+</table>-->

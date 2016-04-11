@@ -1,4 +1,10 @@
 <!-- Place all UI elements intended to be present across all routes in this file -->
-<div class="app">
-  <div ui-view></div>
+<div class="app-container">
+    <section class="page-container">
+        <div class="inner-view">
+            <div ui-view class="container"></div>
+        </div>
+    </section>
+    
+    <player id="player" audio="vm.audio"></player>
 </div>

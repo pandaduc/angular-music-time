@@ -1,0 +1,179 @@
+@import 'variables';
+@import 'normalize';
+@import 'input-range';
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Lato', arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: $primary-text-color;
+}
+
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: $primary-text-color;
+    outline: none;
+    text-decoration: none;
+}
+
+.app-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: $primary-color;
+}
+
+.container {
+    min-height: 100%;
+    max-width: 1600px;
+    padding: 20px 25px;
+    margin: 0 auto;
+}
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: $primary-text-color;
+}
+
+button, .button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+/** Main view **/
+.page-container {
+    height: calc(100% - 50px);
+    display: flex;
+    position: relative;
+    
+    .inner-view {
+        flex: 1 1 auto;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+    }    
+}
+
+/** Player **/
+#player {
+    background-color: $primary-color;
+    flex: 0 0 50px;
+    width: 100%;
+    display: flex;
+    position: relative; 
+    
+    > div {
+        display: flex;
+        align-items: center;
+    }
+    
+    .buttons {
+        margin: 0 20px 0 15px;
+    }
+    
+    .progress {
+        flex: 1 1 auto;
+        justify-content: center;
+        font-size: 13px;    
+        
+        .progress__bar {
+            margin: 0 10px;
+            cursor: pointer;
+            width: 100%;
+            
+            .input-range-group {
+                width: 100%;
+            }           
+            
+            .current-bar {
+                display: block;
+                background: black;
+                width: 0%;
+                height: 5px;
+                position: absolute;
+                left: 0;
+                top: 7px;
+                border-radius: $thumb-radius;
+                z-index: 0;
+            }
+        }
+        
+        
+    }
+    
+    .volume {
+        display: flex;
+        align-items: center;
+    }
+    
+}
+
+/** tracks **/
+.tracks {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    
+    .track {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        margin: 0;
+        padding: 15px;
+                
+        a {
+            text-decoration: none;
+            letter-spacing: 1px;
+            display: block;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        .track__image {
+            position: relative;
+            
+            &:hover .overlay {
+                visibility: visible;
+            }
+        }
+        
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            left: 0;
+            top: 0;
+            text-align: center;
+            font-size: 100px;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            background-color: rgba(0, 0, 0, 0.5);
+            
+            > button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+        }
+    }
+}
